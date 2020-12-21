@@ -11,6 +11,8 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.graphicdiceroller.widgets.EditTextDiceNum;
+
 import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -19,25 +21,14 @@ import static com.example.graphicdiceroller.DiceEnum.*;
 
 public class MainActivity extends AppCompatActivity {
 
-    Map<String, Integer> diceMap = buildDiceMap();
+    public static Map<String, Integer> diceMap = buildDiceMap();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        EditText editD4Txt = findViewById(R.id.editD4Num);
-        editD4Txt.addTextChangedListener(new TextWatcher(){
-
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                updateEditText(editD4Txt, D4);
-            }
-            @Override
-            public void afterTextChanged(Editable s) {}
-        });
+        EditTextDiceNum editD4Txt = findViewById(R.id.editD4Num);
         Button btnAddD4 = findViewById(R.id.btnD4Add);
         btnAddD4.setOnClickListener(v -> {
             addDice(D4.getDiceType());
@@ -50,17 +41,7 @@ public class MainActivity extends AppCompatActivity {
             editD4Txt.setText(diceMap.get(D4.getDiceType()).toString());
         });
 
-        EditText editD6Txt = findViewById(R.id.editD6Num);
-        editD6Txt.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                updateEditText(editD6Txt, D6);
-            }
-            @Override
-            public void afterTextChanged(Editable s) {}
-        });
+        EditTextDiceNum editD6Txt = findViewById(R.id.editD6Num);
         Button btnAddD6 = findViewById(R.id.btnD6Add);
         btnAddD6.setOnClickListener(v -> {
             addDice(D6.getDiceType());
@@ -72,17 +53,8 @@ public class MainActivity extends AppCompatActivity {
             editD6Txt.setText(diceMap.get(D6.getDiceType()).toString());
         });
 
-        EditText editD8Txt = findViewById(R.id.editD8Num);
-        editD8Txt.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                updateEditText(editD8Txt, D8);
-            }
-            @Override
-            public void afterTextChanged(Editable s) {}
-        });
+        EditTextDiceNum editD8Txt = findViewById(R.id.editD8Num);
+
         Button btnAddD8 = findViewById(R.id.btnD8Add);
         btnAddD8.setOnClickListener(v -> {
             addDice(D8.getDiceType());
@@ -94,17 +66,8 @@ public class MainActivity extends AppCompatActivity {
             editD8Txt.setText(diceMap.get(D8.getDiceType()).toString());
         });
 
-        EditText editD10Txt = findViewById(R.id.editD10Num);
-        editD10Txt.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                updateEditText(editD10Txt, D10);
-            }
-            @Override
-            public void afterTextChanged(Editable s) {}
-        });
+        EditTextDiceNum editD10Txt = findViewById(R.id.editD10Num);
+
         Button btnAddD10 = findViewById(R.id.btnD10Add);
         btnAddD10.setOnClickListener(v -> {
             addDice(D10.getDiceType());
@@ -116,17 +79,7 @@ public class MainActivity extends AppCompatActivity {
             editD10Txt.setText(diceMap.get(D10.getDiceType()).toString());
         });
 
-        EditText editD20Txt = findViewById(R.id.editD20Num);
-        editD20Txt.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                updateEditText(editD20Txt, D20);
-            }
-            @Override
-            public void afterTextChanged(Editable s) {}
-        });
+        EditTextDiceNum editD20Txt = findViewById(R.id.editD20Num);
         Button btnAddD20 = findViewById(R.id.btnD20Add);
         btnAddD20.setOnClickListener(v -> {
             addDice(D20.getDiceType());
@@ -138,17 +91,7 @@ public class MainActivity extends AppCompatActivity {
             editD20Txt.setText(diceMap.get(D20.getDiceType()).toString());
         });
 
-        EditText editD100Txt = findViewById(R.id.editD100Num);
-        editD100Txt.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                updateEditText(editD100Txt, D100);
-            }
-            @Override
-            public void afterTextChanged(Editable s) {}
-        });
+        EditTextDiceNum editD100Txt = findViewById(R.id.editD100Num);
         Button btnAddD100 = findViewById(R.id.btnD100Add);
         btnAddD100.setOnClickListener(v -> {
             addDice(D100.getDiceType());
@@ -190,7 +133,7 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    private Map buildDiceMap(){
+    private static Map buildDiceMap(){
         return Stream.of(new Object[][] {
                 {D4.getDiceType(), 0},
                 {D6.getDiceType(), 0},
@@ -199,23 +142,6 @@ public class MainActivity extends AppCompatActivity {
                 {D20.getDiceType(), 0},
                 {D100.getDiceType(), 0},
         }).collect(Collectors.toMap(data -> (String) data[0], data -> (Integer) data[1]));
-    }
-
-    private Integer updateEditText(EditText editText, DiceEnum dice){
-        String changedText = editText.getText().toString();
-        Integer newVal = null;
-        try{
-            newVal = Integer.parseInt(changedText);
-        } catch (Exception e){
-            System.out.println("An error occurred parsing to an Integer: " + e.getMessage());
-            newVal = 0;
-        }
-        if (newVal != null && newVal >= 0) {
-            diceMap.put(dice.getDiceType(), newVal);
-        } else {
-            editText.setText(diceMap.get(dice.getDiceType()).toString());
-        }
-        return diceMap.get(dice.getDiceType());
     }
 
     private Integer addDice(String diceType){
