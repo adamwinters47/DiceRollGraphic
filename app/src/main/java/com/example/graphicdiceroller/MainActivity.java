@@ -1,123 +1,54 @@
 package com.example.graphicdiceroller;
 
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.graphicdiceroller.widgets.ButtonResetDice;
+import com.example.graphicdiceroller.widgets.ButtonRollDice;
 import com.example.graphicdiceroller.widgets.EditTextDiceNum;
 
-import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import static com.example.graphicdiceroller.DiceEnum.*;
-
 public class MainActivity extends AppCompatActivity {
-
-    public static Map<String, Integer> diceMap = buildDiceMap();
-    public static EditTextDiceNum editD4Txt;
-    public static EditTextDiceNum editD6Txt;
-    public static EditTextDiceNum editD8Txt;
-    public static EditTextDiceNum editD10Txt;
-    public static EditTextDiceNum editD20Txt;
-    public static EditTextDiceNum editD100Txt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        editD4Txt = findViewById(R.id.editD4Num);
-        Button btnAddD4 = findViewById(R.id.btnD4Add);
-        btnAddD4.setOnClickListener(v -> {
-            addDice(D4.getDiceType());
-            editD4Txt.setText(diceMap.get(D4.getDiceType()).toString());
-        });
+        EditTextDiceNum editD4Txt = findViewById(R.id.editD4Num);
+        editD4Txt.setBtnAddDice(findViewById(R.id.btnD4Add));
+        editD4Txt.setBtnRemoveDice(findViewById(R.id.btnD4Remove));
 
-        Button btnRemoveD4 = findViewById(R.id.btnD4Remove);
-        btnRemoveD4.setOnClickListener(v -> {
-            removeDice(D4.getDiceType());
-            editD4Txt.setText(diceMap.get(D4.getDiceType()).toString());
-        });
+        EditTextDiceNum editD6Txt = findViewById(R.id.editD6Num);
+        editD6Txt.setBtnAddDice(findViewById(R.id.btnD6Add));
+        editD6Txt.setBtnRemoveDice(findViewById(R.id.btnD6Remove));
 
-        editD6Txt = findViewById(R.id.editD6Num);
-        Button btnAddD6 = findViewById(R.id.btnD6Add);
-        btnAddD6.setOnClickListener(v -> {
-            addDice(D6.getDiceType());
-            editD6Txt.setText(diceMap.get(D6.getDiceType()).toString());
-        });
-        Button btnRemoveD6 = findViewById(R.id.btnD6Remove);
-        btnRemoveD6.setOnClickListener(v -> {
-            removeDice(D6.getDiceType());
-            editD6Txt.setText(diceMap.get(D6.getDiceType()).toString());
-        });
+        EditTextDiceNum editD8Txt = findViewById(R.id.editD8Num);
+        editD8Txt.setBtnAddDice(findViewById(R.id.btnD8Add));
+        editD8Txt.setBtnRemoveDice(findViewById(R.id.btnD8Remove));
 
-        editD8Txt = findViewById(R.id.editD8Num);
+        EditTextDiceNum editD10Txt = findViewById(R.id.editD10Num);
+        editD10Txt.setBtnAddDice(findViewById(R.id.btnD10Add));
+        editD10Txt.setBtnRemoveDice(findViewById(R.id.btnD10Remove));
 
-        Button btnAddD8 = findViewById(R.id.btnD8Add);
-        btnAddD8.setOnClickListener(v -> {
-            addDice(D8.getDiceType());
-            editD8Txt.setText(diceMap.get(D8.getDiceType()).toString());
-        });
-        Button btnRemoveD8 = findViewById(R.id.btnD8Remove);
-        btnRemoveD8.setOnClickListener(v -> {
-            removeDice(D8.getDiceType());
-            editD8Txt.setText(diceMap.get(D8.getDiceType()).toString());
-        });
+        EditTextDiceNum editD20Txt = findViewById(R.id.editD20Num);
+        editD20Txt.setBtnAddDice(findViewById(R.id.btnD20Add));
+        editD20Txt.setBtnRemoveDice(findViewById(R.id.btnD20Remove));
 
-        editD10Txt = findViewById(R.id.editD10Num);
+        EditTextDiceNum editD100Txt = findViewById(R.id.editD100Num);
+        editD100Txt.setBtnAddDice(findViewById(R.id.btnD100Add));
+        editD100Txt.setBtnRemoveDice(findViewById(R.id.btnD100Remove));
 
-        Button btnAddD10 = findViewById(R.id.btnD10Add);
-        btnAddD10.setOnClickListener(v -> {
-            addDice(D10.getDiceType());
-            editD10Txt.setText(diceMap.get(D10.getDiceType()).toString());
-        });
-        Button btnRemoveD10 = findViewById(R.id.btnD10Remove);
-        btnRemoveD10.setOnClickListener(v -> {
-            removeDice(D10.getDiceType());
-            editD10Txt.setText(diceMap.get(D10.getDiceType()).toString());
-        });
-
-        editD20Txt = findViewById(R.id.editD20Num);
-        Button btnAddD20 = findViewById(R.id.btnD20Add);
-        btnAddD20.setOnClickListener(v -> {
-            addDice(D20.getDiceType());
-            editD20Txt.setText(diceMap.get(D20.getDiceType()).toString());
-        });
-        Button btnRemoveD20 = findViewById(R.id.btnD20Remove);
-        btnRemoveD20.setOnClickListener(v -> {
-            removeDice(D20.getDiceType());
-            editD20Txt.setText(diceMap.get(D20.getDiceType()).toString());
-        });
-
-        editD100Txt = findViewById(R.id.editD100Num);
-        Button btnAddD100 = findViewById(R.id.btnD100Add);
-        btnAddD100.setOnClickListener(v -> {
-            addDice(D100.getDiceType());
-            editD100Txt.setText(diceMap.get(D100.getDiceType()).toString());
-        });
-        Button btnRemoveD100 = findViewById(R.id.btnD100Remove);
-        btnRemoveD100.setOnClickListener(v -> {
-            removeDice(D100.getDiceType());
-            editD100Txt.setText(diceMap.get(D100.getDiceType()).toString());
-        });
-
-        TextView txtResult = findViewById(R.id.txtRollResult);
-        Button btnRoll = findViewById(R.id.btnRoll);
-        btnRoll.setOnClickListener(v -> {
-            Integer diceResult = rollDice();
-            txtResult.setText(diceResult.toString());
-        });
+        ButtonRollDice btnRoll = findViewById(R.id.btnRoll);
+        btnRoll.setTxtResult(findViewById(R.id.txtRollResult));
 
         ButtonResetDice btnResetDice = findViewById(R.id.btnResetDice);
+        btnResetDice.setEditTextDiceNumList(Stream.of(editD4Txt, editD6Txt, editD8Txt, editD10Txt, editD20Txt, editD100Txt).collect(Collectors.toList()));
     }
 
     @Override
@@ -140,58 +71,5 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
-    }
-
-    public static void resetTextFields(){
-        editD4Txt.setText("0");
-        editD6Txt.setText("0");
-        editD8Txt.setText("0");
-        editD10Txt.setText("0");
-        editD20Txt.setText("0");
-        editD100Txt.setText("0");
-    }
-
-    public static Map buildDiceMap(){
-        return Stream.of(new Object[][] {
-                {D4.getDiceType(), 0},
-                {D6.getDiceType(), 0},
-                {D8.getDiceType(), 0},
-                {D10.getDiceType(), 0},
-                {D20.getDiceType(), 0},
-                {D100.getDiceType(), 0},
-        }).collect(Collectors.toMap(data -> (String) data[0], data -> (Integer) data[1]));
-    }
-
-    private Integer addDice(String diceType){
-        Integer numDice = diceMap.get(diceType);
-        if(numDice == null){
-            diceMap.put(diceType, 1);
-        } else {
-            diceMap.put(diceType, numDice + 1);
-        }
-        return numDice;
-    }
-
-    private Integer removeDice(String diceType){
-        Integer numDice = diceMap.get(diceType);
-        if(numDice == null || numDice <= 0){
-            diceMap.put(diceType, 0);
-        } else {
-            diceMap.put(diceType, numDice - 1);
-        }
-        return numDice;
-    }
-
-    private Integer rollDice(){
-        Integer result = 0;
-        for(DiceEnum dice : DiceEnum.values()){
-            System.out.println("Number of " + dice.getDiceType() + " to roll - " + diceMap.get(dice.getDiceType()));
-            for(int i = 0; i < diceMap.get(dice.getDiceType()); i++){
-                Integer rollResult = (int)(Math.random() * dice.getDiceNum()) + 1;
-                result += rollResult;
-                System.out.println(dice.getDiceType() + " roll num " + (i + 1) + " result: " + rollResult);
-            }
-        }
-        return result;
     }
 }
