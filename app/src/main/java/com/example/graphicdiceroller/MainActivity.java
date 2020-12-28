@@ -3,15 +3,12 @@ package com.example.graphicdiceroller;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.graphicdiceroller.widgets.ButtonResetDice;
-import com.example.graphicdiceroller.widgets.ButtonRollDice;
-import com.example.graphicdiceroller.widgets.EditTextDiceNum;
-
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
+import com.example.graphicdiceroller.fragments.DiceFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,35 +17,19 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        EditTextDiceNum editD4Txt = findViewById(R.id.editD4Num);
-        editD4Txt.setBtnAddDice(findViewById(R.id.btnD4Add));
-        editD4Txt.setBtnRemoveDice(findViewById(R.id.btnD4Remove));
-
-        EditTextDiceNum editD6Txt = findViewById(R.id.editD6Num);
-        editD6Txt.setBtnAddDice(findViewById(R.id.btnD6Add));
-        editD6Txt.setBtnRemoveDice(findViewById(R.id.btnD6Remove));
-
-        EditTextDiceNum editD8Txt = findViewById(R.id.editD8Num);
-        editD8Txt.setBtnAddDice(findViewById(R.id.btnD8Add));
-        editD8Txt.setBtnRemoveDice(findViewById(R.id.btnD8Remove));
-
-        EditTextDiceNum editD10Txt = findViewById(R.id.editD10Num);
-        editD10Txt.setBtnAddDice(findViewById(R.id.btnD10Add));
-        editD10Txt.setBtnRemoveDice(findViewById(R.id.btnD10Remove));
-
-        EditTextDiceNum editD20Txt = findViewById(R.id.editD20Num);
-        editD20Txt.setBtnAddDice(findViewById(R.id.btnD20Add));
-        editD20Txt.setBtnRemoveDice(findViewById(R.id.btnD20Remove));
-
-        EditTextDiceNum editD100Txt = findViewById(R.id.editD100Num);
-        editD100Txt.setBtnAddDice(findViewById(R.id.btnD100Add));
-        editD100Txt.setBtnRemoveDice(findViewById(R.id.btnD100Remove));
-
-        ButtonRollDice btnRoll = findViewById(R.id.btnRoll);
-        btnRoll.setTxtResult(findViewById(R.id.txtRollResult));
-
-        ButtonResetDice btnResetDice = findViewById(R.id.btnResetDice);
-        btnResetDice.setEditTextDiceNumList(Stream.of(editD4Txt, editD6Txt, editD8Txt, editD10Txt, editD20Txt, editD100Txt).collect(Collectors.toList()));
+        Button btnOpenDiceFragment = findViewById(R.id.btnOpenDiceRoller);
+        btnOpenDiceFragment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(savedInstanceState == null){
+                    getSupportFragmentManager().beginTransaction()
+                            .setReorderingAllowed(true)
+                            .add(R.id.fragment_container_view, DiceFragment.class, null)
+                            .commit();
+                    btnOpenDiceFragment.setVisibility(View.INVISIBLE);
+                }
+            }
+        });
     }
 
     @Override
