@@ -5,16 +5,13 @@ import android.content.res.TypedArray;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.AttributeSet;
-import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatEditText;
 
 import com.example.graphicdiceroller.DiceEnum;
-import com.example.graphicdiceroller.MainActivity;
 import com.example.graphicdiceroller.R;
 
 import static com.example.graphicdiceroller.DiceMap.Dice;

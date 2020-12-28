@@ -2,14 +2,12 @@ package com.example.graphicdiceroller.widgets;
 
 import android.content.Context;
 import android.util.AttributeSet;
-import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatButton;
 
 import com.example.graphicdiceroller.DiceMap;
-import com.example.graphicdiceroller.MainActivity;
 
 import java.util.List;
 

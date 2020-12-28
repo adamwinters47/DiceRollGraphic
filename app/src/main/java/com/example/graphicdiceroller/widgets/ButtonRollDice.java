@@ -9,7 +9,6 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatButton;
 
 import com.example.graphicdiceroller.DiceEnum;
-import com.example.graphicdiceroller.DiceMap;
 
 import static com.example.graphicdiceroller.DiceMap.Dice;
 
