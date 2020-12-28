@@ -8,9 +8,9 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.example.graphicdiceroller.R;
-import com.example.graphicdiceroller.widgets.ButtonResetDice;
-import com.example.graphicdiceroller.widgets.ButtonRollDice;
-import com.example.graphicdiceroller.widgets.EditTextDiceNum;
+import com.example.graphicdiceroller.widgets.buttons.ButtonResetDice;
+import com.example.graphicdiceroller.widgets.buttons.ButtonRollDice;
+import com.example.graphicdiceroller.widgets.edittext.EditTextDiceNum;
 
 import java.util.stream.Collectors;
 import java.util.stream.Stream;

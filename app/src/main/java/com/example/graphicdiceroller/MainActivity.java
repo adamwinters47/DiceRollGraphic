@@ -16,20 +16,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        Button btnOpenDiceFragment = findViewById(R.id.btnOpenDiceRoller);
-        btnOpenDiceFragment.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(savedInstanceState == null){
-                    getSupportFragmentManager().beginTransaction()
-                            .setReorderingAllowed(true)
-                            .add(R.id.fragment_container_view, DiceFragment.class, null)
-                            .commit();
-                    btnOpenDiceFragment.setVisibility(View.INVISIBLE);
-                }
-            }
-        });
     }
 
     @Override

@@ -1,4 +1,4 @@
-package com.example.graphicdiceroller.widgets;
+package com.example.graphicdiceroller.widgets.buttons;
 
 import android.content.Context;
 import android.util.AttributeSet;
