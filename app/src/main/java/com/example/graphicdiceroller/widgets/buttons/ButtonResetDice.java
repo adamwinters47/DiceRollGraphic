@@ -1,4 +1,4 @@
-package com.example.graphicdiceroller.widgets;
+package com.example.graphicdiceroller.widgets.buttons;
 
 import android.content.Context;
 import android.util.AttributeSet;
@@ -8,6 +8,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatButton;
 
 import com.example.graphicdiceroller.DiceMap;
+import com.example.graphicdiceroller.widgets.edittext.EditTextDiceNum;
 
 import java.util.List;
 
@@ -19,16 +20,17 @@ public class ButtonResetDice extends AppCompatButton {
     List<EditTextDiceNum> editTextDiceNumList;
     public ButtonResetDice(@NonNull Context context) {
         super(context);
+        init();
     }
 
     public ButtonResetDice(@NonNull Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
-        init(context, attrs);
+        init();
     }
 
     public ButtonResetDice(@NonNull Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        init(context, attrs);
+        init();
     }
 
     public void setEditTextDiceNumList(List<EditTextDiceNum> editTextDiceNumList){
@@ -39,7 +41,7 @@ public class ButtonResetDice extends AppCompatButton {
         return editTextDiceNumList;
     }
 
-    private void init(Context context, AttributeSet attrs){
+    private void init(){
         setOnClickListener(v -> {
             Dice.putAll(DiceMap.buildDiceMap());
             for(EditTextDiceNum editText : editTextDiceNumList){

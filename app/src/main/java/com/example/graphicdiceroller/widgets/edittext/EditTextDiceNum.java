@@ -1,4 +1,4 @@
-package com.example.graphicdiceroller.widgets;
+package com.example.graphicdiceroller.widgets.edittext;
 
 import android.content.Context;
 import android.content.res.TypedArray;

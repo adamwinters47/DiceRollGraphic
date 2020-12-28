@@ -20,7 +20,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/txtD4" />
 
-    <com.example.graphicdiceroller.widgets.EditTextDiceNum
+    <com.example.graphicdiceroller.widgets.edittext.EditTextDiceNum
         android:id="@+id/editD4Num"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -85,7 +85,7 @@
         app:layout_constraintTop_toTopOf="@+id/txtD6"
         app:layout_constraintVertical_bias="1.0" />
 
-    <com.example.graphicdiceroller.widgets.EditTextDiceNum
+    <com.example.graphicdiceroller.widgets.edittext.EditTextDiceNum
         android:id="@+id/editD6Num"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -149,7 +149,7 @@
         android:layout_marginStart="24dp"
         app:layout_constraintTop_toTopOf="@+id/txtD8" />
 
-    <com.example.graphicdiceroller.widgets.EditTextDiceNum
+    <com.example.graphicdiceroller.widgets.edittext.EditTextDiceNum
         android:id="@+id/editD8Num"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -212,7 +212,7 @@
         android:layout_marginStart="24dp"
         app:layout_constraintTop_toTopOf="@+id/txtD10" />
 
-    <com.example.graphicdiceroller.widgets.EditTextDiceNum
+    <com.example.graphicdiceroller.widgets.edittext.EditTextDiceNum
         android:id="@+id/editD10Num"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -275,7 +275,7 @@
         android:layout_marginStart="24dp"
         app:layout_constraintTop_toTopOf="@+id/txtD20" />
 
-    <com.example.graphicdiceroller.widgets.EditTextDiceNum
+    <com.example.graphicdiceroller.widgets.edittext.EditTextDiceNum
         android:id="@+id/editD20Num"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -338,7 +338,7 @@
         android:layout_marginStart="24dp"
         app:layout_constraintTop_toTopOf="@+id/txtD100" />
 
-    <com.example.graphicdiceroller.widgets.EditTextDiceNum
+    <com.example.graphicdiceroller.widgets.edittext.EditTextDiceNum
         android:id="@+id/editD100Num"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -387,7 +387,7 @@
         android:layout_marginEnd="24dp"
         app:layout_constraintTop_toTopOf="@+id/txtD100" />
 
-    <com.example.graphicdiceroller.widgets.ButtonRollDice
+    <com.example.graphicdiceroller.widgets.buttons.ButtonRollDice
         android:id="@+id/btnRoll"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -412,7 +412,7 @@
         app:layout_constraintEnd_toEndOf="@+id/btnResetDice"
         app:layout_constraintStart_toStartOf="@+id/btnResetDice" />
 
-    <com.example.graphicdiceroller.widgets.ButtonResetDice
+    <com.example.graphicdiceroller.widgets.buttons.ButtonResetDice
         android:id="@+id/btnResetDice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
