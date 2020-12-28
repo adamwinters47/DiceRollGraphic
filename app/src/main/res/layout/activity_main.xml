@@ -388,7 +388,7 @@
         android:layout_marginEnd="24dp"
         app:layout_constraintTop_toTopOf="@+id/txtD100" />
 
-    <Button
+    <com.example.graphicdiceroller.widgets.ButtonRollDice
         android:id="@+id/btnRoll"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
