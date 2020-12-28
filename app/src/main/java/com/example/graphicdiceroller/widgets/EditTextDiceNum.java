@@ -28,11 +28,6 @@ public class EditTextDiceNum extends AppCompatEditText {
         super(context, attrs, defStyleAttr);
         init(context, attrs);
     }
-    //TODO: Delete this constructor if no issues
-//    public EditTextDiceNum(Context context) {
-//        super(context);
-//        init();
-//    }
 
     public void setDice(DiceEnum dice){
         this.dice = dice;

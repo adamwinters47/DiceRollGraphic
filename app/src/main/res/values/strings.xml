@@ -11,6 +11,8 @@
     <string name="txtD10">D10</string>
     <string name="txtD20">D20</string>
     <string name="txtD100">D100</string>
+    <string name="resetDice">Reset</string>
+    <string name="numDiceDefault">0</string>
     <string name="txtAddDice">+</string>
     <string name="txtRemoveDice">-</string>
 

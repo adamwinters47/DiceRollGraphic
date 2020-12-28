@@ -28,6 +28,7 @@
         android:backgroundTint="@color/black"
         android:ems="2"
         android:inputType="number"
+        android:text="@string/numDiceDefault"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textColorHighlight="@color/black"
@@ -38,7 +39,6 @@
         app:diceType="D4"
         app:layout_constraintBottom_toBottomOf="@+id/txtD4"
         app:layout_constraintEnd_toStartOf="@+id/txtD4"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/btnD4Remove"
         app:layout_constraintTop_toTopOf="@+id/txtD4" />
 
@@ -52,9 +52,9 @@
         android:textSize="32sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/txtD6"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/txtD6"
         app:layout_constraintHorizontal_bias="0.65"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/txtD6"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
@@ -93,6 +93,7 @@
         android:backgroundTint="@color/black"
         android:ems="2"
         android:inputType="number"
+        android:text="@string/numDiceDefault"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textColorHighlight="@color/black"
@@ -103,7 +104,6 @@
         app:diceType="D6"
         app:layout_constraintBottom_toBottomOf="@+id/txtD6"
         app:layout_constraintEnd_toStartOf="@+id/txtD6"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/btnD6Remove"
         app:layout_constraintTop_toTopOf="@+id/txtD6" />
 
@@ -113,12 +113,12 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="@string/txtD6"
-        android:textSize="32sp"
         android:textColor="@color/black"
+        android:textSize="32sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/txtD8"
         app:layout_constraintHorizontal_bias="0.65"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/txtD8"
         app:layout_constraintTop_toBottomOf="@+id/txtD4" />
 
     <Button
@@ -164,10 +164,10 @@
         android:textCursorDrawable="@color/black"
         android:textSize="32sp"
         android:textStyle="bold"
+        android:text="@string/numDiceDefault"
         app:diceType="D8"
         app:layout_constraintBottom_toBottomOf="@+id/txtD8"
         app:layout_constraintEnd_toStartOf="@+id/txtD8"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/btnD8Remove"
         app:layout_constraintTop_toTopOf="@+id/txtD8" />
 
@@ -180,9 +180,9 @@
         android:textColor="@color/black"
         android:textSize="32sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.65"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/txtD10"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/txtD10"
         app:layout_constraintTop_toBottomOf="@+id/txtD6" />
 
     <Button
@@ -227,10 +227,10 @@
         android:textCursorDrawable="@color/black"
         android:textSize="32sp"
         android:textStyle="bold"
+        android:text="@string/numDiceDefault"
         app:diceType="D10"
         app:layout_constraintBottom_toBottomOf="@+id/txtD10"
         app:layout_constraintEnd_toStartOf="@+id/txtD10"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/btnD10Remove"
         app:layout_constraintTop_toTopOf="@+id/txtD10" />
 
@@ -243,9 +243,9 @@
         android:textColor="@color/black"
         android:textSize="32sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/txtD20"
         app:layout_constraintHorizontal_bias="0.68"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/txtD20"
         app:layout_constraintTop_toBottomOf="@+id/txtD8" />
 
     <Button
@@ -290,10 +290,10 @@
         android:textCursorDrawable="@color/black"
         android:textSize="32sp"
         android:textStyle="bold"
+        android:text="@string/numDiceDefault"
         app:diceType="D20"
         app:layout_constraintBottom_toBottomOf="@+id/txtD20"
         app:layout_constraintEnd_toStartOf="@+id/txtD20"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/btnD20Remove"
         app:layout_constraintTop_toTopOf="@+id/txtD20" />
 
@@ -306,9 +306,9 @@
         android:textColor="@color/black"
         android:textSize="32sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.68"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/txtD100"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/txtD100"
         app:layout_constraintTop_toBottomOf="@+id/txtD10" />
 
     <Button
@@ -353,10 +353,10 @@
         android:textCursorDrawable="@color/black"
         android:textSize="32sp"
         android:textStyle="bold"
+        android:text="@string/numDiceDefault"
         app:diceType="D100"
         app:layout_constraintBottom_toBottomOf="@+id/txtD100"
         app:layout_constraintEnd_toStartOf="@+id/txtD100"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/btnD100Remove"
         app:layout_constraintTop_toTopOf="@+id/txtD100" />
 
@@ -370,7 +370,7 @@
         android:textSize="32sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.71"
+        app:layout_constraintHorizontal_bias="0.64"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtD20" />
 
@@ -396,7 +396,7 @@
         android:backgroundTint="#79A66A12"
         android:text="@string/btnRollText"
         android:textColor="@color/black"
-        android:textSize="30sp"
+        android:textSize="32sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -405,12 +405,26 @@
         android:id="@+id/txtRollResult"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
+        android:layout_marginBottom="25dp"
+        android:textColor="@color/black"
         android:textSize="44sp"
         android:textStyle="bold"
-        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/btnResetDice"
+        app:layout_constraintEnd_toEndOf="@+id/btnResetDice"
+        app:layout_constraintStart_toStartOf="@+id/btnResetDice" />
+
+    <com.example.graphicdiceroller.widgets.ButtonResetDice
+        android:id="@+id/btnResetDice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:textColor="#800000"
+        android:text="@string/resetDice"
+        android:backgroundTint="#79A66A12"
+        android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/btnRoll"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="@+id/btnRoll"
+        app:layout_constraintStart_toStartOf="@+id/btnRoll" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
