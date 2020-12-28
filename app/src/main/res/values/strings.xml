@@ -15,5 +15,6 @@
     <string name="numDiceDefault">0</string>
     <string name="txtAddDice">+</string>
     <string name="txtRemoveDice">-</string>
+    <string name="btnDiceRoller">Open Dice Roller</string>
 
 </resources>
